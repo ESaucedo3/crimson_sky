@@ -1,14 +1,34 @@
 import { useEffect, useState } from "react";
+import api from "../services/AxiosService";
 
 const Weather = () => {
-  const [weather, setWeather] = useState();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    const fetchWeather = () => {
-      console.log('Fetching...');
+    const controller = new AbortController();
+    const signal = controller.signal;
+    const fetchWeatherData = async () => {
+      try {
+        const response = await api.get('', { signal });
+        if (!response) throw new Error("Something went wrong, when retrieving weather data");
+        console.log(response.data);
+      } 
+      catch (e) {
+        if (e instanceof Error) {
+          if (e.name === "CanceledError") {
+            console.info("Success, only 1 API call was made");
+          }
+          else {
+            console.error(`Error name: ${e.name} | Error message: ${e.message}`);
+          }
+        }
+      }
     }
+  
+    fetchWeatherData();
 
-    fetchWeather();
+    return () => controller.abort();
   }, []);
 
   return (
