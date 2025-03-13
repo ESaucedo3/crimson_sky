@@ -1,0 +1,49 @@
+.weather-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  > * {
+    height: 100%;
+  }
+
+  .void {
+    background-image: url(https://img.pikbest.com/photo/20241205/vast-black-void-with-glowing-stars-and-a-swirling-deep-blue-purple_11210158.jpg!w700wp);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .snowy {
+    background-color: lightblue;
+
+    > p {
+      color: black;
+    }
+  }
+
+  .sunny {
+    background-color: goldenrod;
+  }
+
+  .rainy {
+    background-color: aquamarine;
+  }
+
+  .windy {
+    background-color: antiquewhite;
+  }
+
+  .cloudy {
+    background-color: azure;
+  }
+
+  .stormy {
+    background-color: blueviolet;
+  }
+}
+
+.error-design {
+  justify-self: center;
+}

@@ -1,9 +1,9 @@
-import Weather from "./components/Weather";
+import WeatherUI from "./components/WeatherUI";
 
 export default function App() {
   return (
     <main>
-      <Weather />
+      <WeatherUI />
     </main>
   );
 }
