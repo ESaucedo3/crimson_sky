@@ -3,12 +3,15 @@ type weatherTypeProp = {
 }
 
 const WeatherBackground = ({ weatherType }: weatherTypeProp) => {
+  // NOTE Create Icon through figma and export as svg then animate with css - Modern Way of doing things.
   switch (weatherType) {
     case 'clear':
       return (
-        <div>
+        <div className="clear">
           Clear Weather
+          <div className="sun"></div>
         </div>
+
       );
     case 'cloudy':
       return (

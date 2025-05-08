@@ -15,6 +15,15 @@
     background-position: center;
   }
 
+  .clear {
+    .sun {
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      background-color: gold;
+    }
+  }
+
   .snowy {
     background-color: lightblue;
 
