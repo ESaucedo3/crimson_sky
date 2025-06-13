@@ -1,0 +1,63 @@
+.crimson-sky-title {
+  font-weight: 370;
+  background: linear-gradient(to right, #ecca09e6 30%, crimson 60%, #7c47bc 90%);
+  background-clip: text;
+  background-size: 500% auto;
+  color: transparent;
+  animation: titleEffect 5s ease-in-out infinite alternate;
+  text-shadow: 0 0 6px azure;
+}
+
+.crimson-sky-logo {
+  margin: 0 auto;
+  height: auto;
+
+  .base {
+    filter: drop-shadow(0 0 13px crimson);
+  }
+
+  .star {
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    filter: drop-shadow(0 0 13px azure);
+    opacity: 0.9;
+    animation: starRotation 4s linear infinite;
+  }
+
+  .tiny-star {
+    animation: starsPulsate 2s ease-in-out infinite;
+  }
+}
+
+@keyframes starRotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes starsPulsate {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0px azure);
+    opacity: 0.5;
+  }
+  50% {
+    filter: drop-shadow(0 0 12px azure);
+    opacity: 1;
+  }
+}
+
+@keyframes titleEffect {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .crimson-sky-logo {
+    width: 25%;
+  }
+}
